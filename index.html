@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四川教育测评平台题库</title>
+    <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+    <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+    <link rel="stylesheet" href="style/main.css">
+    <script src="exam/examlist.js" async></script>
+    <script src="js/load-examlist.js" async></script>
+    <script src="js/load-exam.js" async></script>
+</head>
+
+<body class="mdui-theme-primary-indigo mdui-theme-accent-blue">
+    <div class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-theme">
+            <a href="javascript:;" class="mdui-typo-headline">艺术测评题库</a>
+            <a href="javascript:;" class="mdui-typo-title">试题列表</a>
+            <div class="mdui-toolbar-spacer"></div>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '关于'}" mdui-dialog="{target: '#about-dialog'}"><i class="mdui-icon material-icons">info_outline</i></a>
+        </div>
+    </div>
+    <main class="mdui-container-fluid">
+        <div id="card-container" class="mdui-col-md-6 mdui-col-offset-md-3"></div>
+    </main>
+    <div class="mdui-dialog" id="about-dialog">
+        <div class="mdui-dialog-title">关于 About</div>
+        <div class="mdui-dialog-content">
+            <p>本网站由 <a class="mdui-btn mdui-btn-dense mdui-ripple mdui-text-color-theme-accent" href="https://github.com/0And1Story" target="_blank" mdui-tooltip="{content: 'GitHub'}">0And1Story</a> 开发</p>
+            <p>此网站谨供将要参加音美中考的四川学生使用</p>
+            <p class="mdui-typo-title">开发缘由：</p>
+            <p>由于四川省教育测评系统经常不开放，不便于即将参加音美中考的学生刷题，本人作为一名初三学生兼业余开发者，以为大家服务的想法开发了这样一个网站，上面有部分测评系统上的题，便于大家在测评系统不开放的时候刷题。</p>
+            <p class="mdui-typo-title">联系作者：</p>
+            <p>若需要报告BUG或联系开发者，请转至 <a class="mdui-btn mdui-btn-dense mdui-ripple mdui-text-color-theme-accent" href="https://github.com/0And1Story/scjycp/issues" target="_blank" mdui-tooltip="{content: 'GitHub Issues'}">此项目的 Issues</a> </p>
+        </div>
+        <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>我知道了</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+main {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.mdui-container-fluid .mdui-card {
+    margin-top: 20px;
+    padding: 15px;
+}
+.mdui-chip {
+    margin-left: 5px;
+}
+#jump-btn-group .mdui-btn {
+    width: 40px;
+}
+#answer-form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#answer-box .mdui-typo-title {
+    font-size: 1.2em;
+    display: inline;
+}
+#answer-box .mdui-btn-dense {
+    margin-right: 5px;
+    margin-top: 5px;
+}
+#resource-box {
+    width: 150px;
+    margin-top: 10px;
+}
+#resource-box audio {
+    width: 211px;
+    position: relative;
+    left: -30px;
+    transform: scale(0.85);
+}
+#resource-box img {
+    width: 150px;
+    height: auto;
+}
+.mdui-radio[true] {
+    color: #69F0AE;
+}
+.mdui-radio[true] .mdui-radio-icon {
+    border-color: #69F0AE !important;
+}
+.mdui-radio[true] .mdui-radio-icon::before {
+    background-color: #69F0AE !important;
+}
+.mdui-radio[false] {
+    color: #FF5252;
+}
+.mdui-radio[false] .mdui-radio-icon {
+    border-color: #FF5252 !important;
+}
+.mdui-radio[false] .mdui-radio-icon::before {
+    background-color: #FF5252 !important;
+}
+.mdui-radio[checked] {
+    color: #69F0AE;
+}
+.mdui-radio[checked] .mdui-radio-icon {
+    border-color: #448AFF !important;
+}
+.mdui-radio[checked] .mdui-radio-icon::before {
+    background-color: #448AFF !important;
+}
+.mdui-checkbox[true] {
+    color: #69F0AE;
+}
+.mdui-checkbox[true] .mdui-checkbox-icon::after {
+    background-color: #69F0AE !important;
+    border-color: #69F0AE !important;
+}
+.mdui-checkbox[false] {
+    color: #FF5252;
+}
+.mdui-checkbox[false] .mdui-checkbox-icon::after {
+    background-color: #FF5252 !important;
+    border-color: #FF5252 !important;
+}
+.mdui-checkbox[checked] {
+    color: #69F0AE;
+}
+.mdui-checkbox[checked] .mdui-checkbox-icon::after {
+    background-color: #448AFF !important;
+    border-color: #448AFF !important;
+}
+.disable-click {
+    pointer-events: none;
+}
+#analyse-box {
+    margin-bottom: 30px;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.mdui-card {
+    animation: fade-in 0.5s ease;
+}
+@media screen and (max-width: 600px) {
+    #jump-btn-group {
+        margin-bottom: 20px;
+    }
+    #jump-btn-group .mdui-btn {
+        width: 30px;
+    }
+}
