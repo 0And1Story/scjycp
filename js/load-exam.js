@@ -31,7 +31,7 @@ function loadData() {
     '            <div id="analyse-box" class="mdui-text-color-pink-accent mdui-hidden"></div>' +
     '            <button class="mdui-btn mdui-btn-dense mdui-color-theme-accent">上一题</button>' +
     '            <button class="mdui-btn mdui-btn-dense mdui-color-theme-accent">下一题</button>' +
-    '            <button class="mdui-btn mdui-btn-dense mdui-color-theme-accent" onclick="submitAnswer()">提交</button>' +
+    '            <button class="mdui-btn mdui-btn-dense mdui-color-pink-accent" onclick="submitAnswer()">提交</button>' +
     '        </div>' +
     '    </div>' +
     '</div>';

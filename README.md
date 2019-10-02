@@ -1,5 +1,5 @@
 # scjycp
-**本网站由 [0AND1STORY](https://github.com/0And1Story) 开发**
+**本网站由 [0And1Story](https://github.com/0And1Story) 开发**
 
 > 此网站谨供将要参加音美中考的四川学生使用
 
@@ -9,5 +9,9 @@
 
 ### 联系作者：
 
-若需要报告BUG或联系开发者，请转至 [此项目的 ISSUES](https://github.com/0And1Story/scjycp/issues)
+若需要报告BUG或联系开发者，请转至 [此项目的 Issues](https://github.com/0And1Story/scjycp/issues)
+
+### 目前BUG：
+
+- 缺少音频和图片（没有从官方题库下载）
 
