@@ -109,6 +109,6 @@ main {
     }
     #jump-btn-group .mdui-btn {
         width: 30px;
-        text-align: center;
+        padding-left: 7px;
     }
 }
