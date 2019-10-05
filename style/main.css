@@ -5,6 +5,7 @@ main {
 .mdui-container-fluid .mdui-card {
     margin-top: 20px;
     padding: 15px;
+    overflow: visible;
 }
 .mdui-chip {
     margin-left: 5px;
@@ -28,15 +29,30 @@ main {
     width: 150px;
     margin-top: 10px;
 }
-#resource-box audio {
+audio {
     width: 211px;
     position: relative;
     left: -30px;
     transform: scale(0.85);
 }
-#resource-box img {
+img {
     width: 150px;
     height: auto;
+    transition: 0.5s;
+}
+img:hover {
+    transform: scale(3);
+    transform-origin: center right;
+    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+    z-index: 99999;
+    position: relative;
+    top: 0;
+}
+img:first-child {
+    transform-origin: top right;
+}
+img:last-child {
+    transform-origin: bottom right;
 }
 .mdui-radio[true] {
     color: #69F0AE;

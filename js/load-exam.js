@@ -68,7 +68,8 @@ function loadProblem(serial) {
             '    <input type="checkbox" onclick="changeAnswer(' + serial + ',' + i + ')" ' + (checked_answer[serial].indexOf(answer_object.data[serial].options[i].serial) != -1 ? 'checked ' : '') + '/>' +
             '    <i class="mdui-checkbox-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
-            '</label>';
+            '</label>' +
+            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + answer_object.data[serial].options[i].url + '">' : '<audio src="' + answer_object.data[serial].options[i].url + '" controls="controls"></audio>'));
         }
     } else {
         for (let i = 0; i < answer_object.data[serial].options.length; i ++) {
@@ -78,7 +79,8 @@ function loadProblem(serial) {
             '    <input type="radio" name="answer" onclick="changeAnswer(' + serial + ',' + i + ')" ' + (checked_answer[serial].indexOf(answer_object.data[serial].options[i].serial) != -1 ? 'checked ' : '') + '/>' +
             '    <i class="mdui-radio-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
-            '</label>';
+            '</label>' +
+            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + answer_object.data[serial].options[i].url + '">' : '<audio src="' + answer_object.data[serial].options[i].url + '" controls="controls"></audio>'));
         }
     }
     let btns = box.getElementsByClassName('mdui-btn');
@@ -167,7 +169,8 @@ function loadAnswer(serial) {
             '    <input type="checkbox" ' + (checked_answer[serial].indexOf(answer_object.data[serial].options[i].serial) != -1 || answer_object.data[serial].answer.indexOf(answer_object.data[serial].options[i].serial) != -1 ? 'checked ' : '') + '/>' +
             '    <i class="mdui-checkbox-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
-            '</label>';
+            '</label>' +
+            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + answer_object.data[serial].options[i].url + '">' : '<audio src="' + answer_object.data[serial].options[i].url + '" controls="controls"></audio>'));
         }
     } else {
         for (let i = 0; i < answer_object.data[serial].options.length; i ++) {
@@ -177,7 +180,8 @@ function loadAnswer(serial) {
             '    <input type="radio" name="answer' + i + '" ' + (checked_answer[serial].indexOf(answer_object.data[serial].options[i].serial) != -1 || answer_object.data[serial].answer.indexOf(answer_object.data[serial].options[i].serial) != -1 ? 'checked ' : '') + '/>' +
             '    <i class="mdui-radio-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
-            '</label>';
+            '</label>' +
+            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + answer_object.data[serial].options[i].url + '">' : '<audio src="' + answer_object.data[serial].options[i].url + '" controls="controls"></audio>'));
         }
     }
     let analyse_box = document.getElementById('analyse-box');
