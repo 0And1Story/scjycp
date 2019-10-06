@@ -1,5 +1,3 @@
-var pack_serial_now;
-
 function loadExamPack() {
     let card_container = document.getElementById('card-container');
     card_container.innerHTML = '';
@@ -19,6 +17,10 @@ function loadExamPack() {
         '    </div>' +
         '</div>';
     }
+    let here = document.getElementsByClassName('mdui-toolbar')[0].getElementsByClassName('mdui-typo-title')[0];
+    here.innerHTML = '题库列表';
+    document.getElementsByTagName('title')[0].innerHTML = '四川教育测评平台题库';
+    window.history.pushState('', '', 'index.html');
 }
 
 function loadExamList(serial) {
@@ -39,11 +41,8 @@ function loadExamList(serial) {
         '    </div>' +
         '</div>';
     }
-    pack_serial_now = serial;
     let here = document.getElementsByClassName('mdui-toolbar')[0].getElementsByClassName('mdui-typo-title')[0];
     here.innerHTML = '试题列表';
+    document.getElementsByTagName('title')[0].innerHTML = '试题列表 - 四川教育测评平台题库';
+    window.history.pushState('', '', '?list=' + serial);
 }
-
-(function() {
-    window.addEventListener('load', loadExamPack, false);
-})();

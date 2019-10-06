@@ -3,14 +3,16 @@ var checked_answer = [];
 function loadExam(pack, list) {
     let filename = 'exam/' + examlist[pack].type + '/' + examlist[pack].path + '/' + examlist[pack].list[list].file;
     let script = document.createElement('script');
-    script.addEventListener('load', function() { script.remove(); loadData(); });
+    script.addEventListener('load', function() { script.remove(); loadData(pack); });
     script.src = filename;
     document.head.appendChild(script);
     let here = document.getElementsByClassName('mdui-toolbar')[0].getElementsByClassName('mdui-typo-title')[0];
     here.innerHTML = examlist[pack].list[list].name;
+    document.getElementsByTagName('title')[0].innerHTML = examlist[pack].list[list].name + ' - 四川教育测评平台题库';
+    window.history.pushState('', '', '?list=' + pack + '&exam=' + list);
 }
 
-function loadData() {
+function loadData(pack) {
     for (let i = 0; i < answer_object.data.length; i ++) {
         answer_object.data[i].analyse = JSON.parse(answer_object.data[i].analyse);
         answer_object.data[i].options = JSON.parse(answer_object.data[i].options);
@@ -19,7 +21,7 @@ function loadData() {
     }
     let card_container = document.getElementById('card-container');
     card_container.innerHTML = '';
-    card_container.innerHTML += '<button class="mdui-btn" onclick="loadExamList(' + pack_serial_now + ')"><i class="mdui-icon material-icons">arrow_back</i> 返回</button>'
+    card_container.innerHTML += '<button class="mdui-btn" onclick="loadExamList(' + pack + ')"><i class="mdui-icon material-icons">arrow_back</i> 返回</button>'
     card_container.innerHTML += 
     '<div class="mdui-card mdui-hoverable">' +
     '    <div class="mdui-container-fluid">' +
