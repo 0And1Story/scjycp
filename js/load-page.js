@@ -1,5 +1,5 @@
 function loadPage() {
-    let cmds = getArgs();
+    let cmds = getArgs(['list', 'exam']);
     switch(Object.keys(cmds).length) {
         case 0:
             window.addEventListener('load', loadExamPack, false);
@@ -18,12 +18,13 @@ function loadPage() {
     }
 }
 
-function getArgs() {
+function getArgs(keys) {
     let link = window.location.href;
     if (link.split('?').length < 2) return {};
     let command_line = link.split('?')[1].split('&');
     let cmds = {};
     for (let i = 0; i < command_line.length; i ++) {
+        if (keys.indexOf(command_line[i].split('=')[0]) == -1) continue;
         cmds[command_line[i].split('=')[0]] = command_line[i].split('=')[1];
     }
     return cmds;
