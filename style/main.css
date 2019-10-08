@@ -40,9 +40,6 @@ img {
     height: auto;
     transition: 0.5s;
 }
-img:last-child {
-    transform-origin: bottom right;
-}
 img:hover {
     transform: scale(3);
     transform-origin: center right;
@@ -50,6 +47,9 @@ img:hover {
     z-index: 99999;
     position: relative;
     top: 0;
+}
+img:last-child {
+    transform-origin: bottom right;
 }
 img:first-child {
     transform-origin: top right;
