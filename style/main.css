@@ -40,6 +40,9 @@ img {
     height: auto;
     transition: 0.5s;
 }
+img:last-child {
+    transform-origin: bottom right;
+}
 img:hover {
     transform: scale(3);
     transform-origin: center right;
@@ -50,9 +53,6 @@ img:hover {
 }
 img:first-child {
     transform-origin: top right;
-}
-img:last-child {
-    transform-origin: bottom right;
 }
 .mdui-radio[true] {
     color: #69F0AE;
