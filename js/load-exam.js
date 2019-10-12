@@ -1,6 +1,14 @@
 var checked_answer = [];
 
 function loadExam(pack, list) {
+    if (document.getElementsByClassName('mdui-card').length > 0) {
+        let card = document.getElementsByClassName('mdui-card')[list];
+        card.innerHTML += '' +
+        '<div class="mdui-progress">' +
+        '    <div class="mdui-progress-indeterminate mdui-color-theme-accent"></div>' +
+        '</div>';
+        card.getElementsByClassName('mdui-btn')[0].classList.add('mdui-color-theme-300');
+    }
     let filename = 'exam/' + examlist[pack].type + '/' + examlist[pack].path + '/' + examlist[pack].list[list].file;
     let script = document.createElement('script');
     script.addEventListener('load', function() { script.remove(); loadData(pack); });
