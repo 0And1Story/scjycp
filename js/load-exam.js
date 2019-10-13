@@ -17,6 +17,7 @@ function loadExam(pack, list) {
     let here = document.getElementsByClassName('mdui-toolbar')[0].getElementsByClassName('mdui-typo-title')[0];
     here.innerHTML = examlist[pack].list[list].name;
     document.getElementsByTagName('title')[0].innerHTML = examlist[pack].list[list].name + ' - 四川教育测评平台题库';
+    document.getElementById('show-submit-btn').classList.remove('mdui-hidden');
     window.history.pushState('', '', '?list=' + pack + '&exam=' + list);
 }
 
@@ -41,7 +42,7 @@ function loadData(pack) {
     '            <div id="analyse-box" class="mdui-text-color-pink-accent mdui-hidden"></div>' +
     '            <button class="mdui-btn mdui-btn-dense mdui-color-theme-accent">上一题</button>' +
     '            <button class="mdui-btn mdui-btn-dense mdui-color-theme-accent">下一题</button>' +
-    '            <button class="mdui-btn mdui-btn-dense mdui-color-pink-accent" onclick="submitAnswer()">提交</button>' +
+    '            <button class="mdui-btn mdui-btn-dense mdui-color-pink-accent" mdui-dialog="{target: \'#submit-dialog\'}">提交</button>' +
     '        </div>' +
     '    </div>' +
     '</div>';
@@ -219,4 +220,16 @@ function loadAnswer(serial) {
 
 function getResourceLocalPath(url) {
     return 'resource/' + url.split('/').slice(-2).join('/');
+}
+
+function showSubmitButton() {
+    let submit_btn = document.getElementById('answer-box').getElementsByClassName('mdui-btn')[2];
+    let icon = document.getElementById('show-submit-btn').getElementsByClassName('mdui-icon')[0];
+    if (submit_btn.classList.contains('mdui-hidden')) {
+        submit_btn.classList.remove('mdui-hidden');
+        icon.innerHTML = 'visibility';
+    } else {
+        submit_btn.classList.add('mdui-hidden');
+        icon.innerHTML = 'visibility_off';
+    }
 }

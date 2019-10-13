@@ -22,6 +22,7 @@
             <a href="javascript:;" class="mdui-typo-headline">艺术测评题库</a>
             <a href="javascript:;" class="mdui-typo-title">试题列表</a>
             <div class="mdui-toolbar-spacer"></div>
+            <a id="show-submit-btn" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '切换显示提交按钮'}" onclick="showSubmitButton()"><i class="mdui-icon material-icons">visibility_off</i></a>
             <a class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '使用指南'}" mdui-dialog="{target: '#guide-dialog'}"><i class="mdui-icon material-icons">help_outline</i></a>
             <a class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '关于'}" mdui-dialog="{target: '#about-dialog'}"><i class="mdui-icon material-icons">info_outline</i></a>
         </div>
@@ -75,6 +76,14 @@
         </div>
         <div class="mdui-dialog-actions">
             <button class="mdui-btn mdui-ripple" mdui-dialog-close>我知道了</button>
+        </div>
+    </div>
+    <div class="mdui-dialog" id="submit-dialog">
+        <div class="mdui-dialog-title">确认提交？</div>
+        <div class="mdui-dialog-content mdui-typo">提交后将失去当前进度信息并显示答案！</div>
+        <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple mdui-color-pink-accent" onclick="submitAnswer()" mdui-dialog-confirm>确认 OK</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-cancel>取消 Cancel</button>
         </div>
     </div>
 </body>
