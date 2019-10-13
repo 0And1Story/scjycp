@@ -22,7 +22,8 @@
             <a href="javascript:;" class="mdui-typo-headline">艺术测评题库</a>
             <a href="javascript:;" class="mdui-typo-title">试题列表</a>
             <div class="mdui-toolbar-spacer"></div>
-            <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '关于'}" mdui-dialog="{target: '#about-dialog'}"><i class="mdui-icon material-icons">info_outline</i></a>
+            <a class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '使用指南'}" mdui-dialog="{target: '#guide-dialog'}"><i class="mdui-icon material-icons">help_outline</i></a>
+            <a class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '关于'}" mdui-dialog="{target: '#about-dialog'}"><i class="mdui-icon material-icons">info_outline</i></a>
         </div>
     </div>
     <main class="mdui-container-fluid">
@@ -42,6 +43,34 @@
                 <p>无</p>
             </blockquote>
             <br>
+            <p>Copyright © 2019 | Developed by 0And1Story | Published on <a href="https://github.com/0And1Story/scjycp" target="_blank">GitHub</a></p>
+        </div>
+        <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>我知道了</button>
+        </div>
+    </div>
+    <div class="mdui-dialog" id="guide-dialog">
+        <div class="mdui-dialog-title">使用指南 How to Use</div>
+        <div class="mdui-dialog-content mdui-typo">
+            <p class="mdui-typo-title">使用方法：</p>
+            <ol>
+                <li>选择相应的试题即可进入答题页面，加载速度可能较慢，请稍安勿躁。</li>
+                <li>鼠标悬浮至图片上可放大图片。</li>
+                <li>答题时，左侧（手机端在上方）的数字序号区域会显示题目的完成情况（<span class="mdui-text-color-blue-accent">蓝色</span>为已选择），点击可跳转到相应题目。</li>
+                <li>提交后，左侧（手机端在上方）的数字序号区域会显示题目的正确情况（<span class="mdui-text-color-green-accent">绿色</span>为正确，<span class="mdui-text-color-red-accent">红色</span>为错误），点击可跳转到相应题目。</li>
+                <li>提交按钮在做完所有题目后会自动显示，点击可提交答案。</li>
+            </ol>
+            <p class="mdui-typo-title">特色功能：</p>
+            <ol>
+                <li>
+                    键盘快捷键使用方法：
+                    <ul>
+                        <li>A/B/C/D/E/F：更改相应选项的状态。</li>
+                        <li>1/2/3/4/5/6：更改第几个选项的状态。</li>
+                        <li>←/→：上一题/下一题</li>
+                    </ul>
+                </li>
+            </ol>
             <p>Copyright © 2019 | Developed by 0And1Story | Published on <a href="https://github.com/0And1Story/scjycp" target="_blank">GitHub</a></p>
         </div>
         <div class="mdui-dialog-actions">

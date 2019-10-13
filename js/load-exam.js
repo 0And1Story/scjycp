@@ -79,7 +79,7 @@ function loadProblem(serial) {
             '    <i class="mdui-checkbox-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
             '</label>' +
-            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls"></audio>'));
+            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
         }
     } else {
         for (let i = 0; i < answer_object.data[serial].options.length; i ++) {
@@ -90,7 +90,7 @@ function loadProblem(serial) {
             '    <i class="mdui-radio-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
             '</label>' +
-            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls"></audio>'));
+            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
         }
     }
     let btns = box.getElementsByClassName('mdui-btn');
@@ -106,7 +106,7 @@ function loadProblem(serial) {
         if (answer_object.data[serial].resources[i].type == 1) {
             resource_box.innerHTML += '<img src="' + getResourceLocalPath(answer_object.data[serial].resources[i].url) + '">';
         } else {
-            resource_box.innerHTML += '<audio src="' + getResourceLocalPath(answer_object.data[serial].resources[i].url) + '" controls="controls"></audio>';
+            resource_box.innerHTML += '<audio src="' + getResourceLocalPath(answer_object.data[serial].resources[i].url) + '" controls="controls" preload="auto"></audio>';
         }
     }
     let jump_btn_group = document.getElementById('jump-btn-group');
@@ -180,7 +180,7 @@ function loadAnswer(serial) {
             '    <i class="mdui-checkbox-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
             '</label>' +
-            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls"></audio>'));
+            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
         }
     } else {
         for (let i = 0; i < answer_object.data[serial].options.length; i ++) {
@@ -191,7 +191,7 @@ function loadAnswer(serial) {
             '    <i class="mdui-radio-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
             '</label>' +
-            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls"></audio>'));
+            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
         }
     }
     let analyse_box = document.getElementById('analyse-box');
@@ -209,7 +209,7 @@ function loadAnswer(serial) {
         if (answer_object.data[serial].resources[i].type == 1) {
             resource_box.innerHTML += '<img src="' + getResourceLocalPath(answer_object.data[serial].resources[i].url) + '">';
         } else {
-            resource_box.innerHTML += '<audio src="' + getResourceLocalPath(answer_object.data[serial].resources[i].url) + '" controls="controls"></audio>';
+            resource_box.innerHTML += '<audio src="' + getResourceLocalPath(answer_object.data[serial].resources[i].url) + '" controls="controls" preload="auto"></audio>';
         }
     }
     let jump_btn_group = document.getElementById('jump-btn-group');
