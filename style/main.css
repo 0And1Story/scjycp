@@ -39,12 +39,12 @@ img {
     width: 150px;
     height: auto;
     transition: 0.5s;
+    z-index: 1;
 }
 img:hover {
     transform: scale(3);
     transform-origin: center right;
     box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
-    z-index: 99999;
     position: relative;
     top: 0;
 }
