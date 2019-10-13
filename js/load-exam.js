@@ -46,6 +46,10 @@ function loadData(pack) {
     '        </div>' +
     '    </div>' +
     '</div>';
+    card_container.getElementsByClassName('mdui-card')[0].innerHTML += '' +
+    '<div class="mdui-progress">' +
+    '    <div class="mdui-progress-determinate mdui-color-theme-accent" style="width: 0%;"></div>' +
+    '</div>';
     let jump_btn_group = document.getElementById('jump-btn-group');
     jump_btn_group.innerHTML = '';
     for (let i = 0; i < answer_object.data.length; i ++) {
@@ -133,8 +137,10 @@ function changeAnswer(problem, number) {
         jump_btns[problem].classList.add('mdui-color-theme-accent');
     }
     let submit_btn = document.getElementById('answer-box').getElementsByClassName('mdui-btn')[2];
-    if (document.getElementById('jump-btn-group').getElementsByClassName('mdui-color-theme-accent').length >= answer_object.data.length) submit_btn.classList.remove('mdui-hidden');
+    if (document.getElementById('jump-btn-group').getElementsByClassName('mdui-color-theme-accent').length >= answer_object.data.length || document.getElementById('show-submit-btn').getElementsByClassName('mdui-icon')[0].innerHTML == 'visibility') submit_btn.classList.remove('mdui-hidden');
     else submit_btn.classList.add('mdui-hidden');
+    let progress = document.getElementsByClassName('mdui-card')[0].getElementsByClassName('mdui-progress-determinate')[0];
+    progress.setAttribute('style', 'width: ' + document.getElementById('jump-btn-group').getElementsByClassName('mdui-color-theme-accent').length / answer_object.data.length * 100 + '%;');
 }
 
 function submitAnswer() {
@@ -160,6 +166,7 @@ function submitAnswer() {
     jump_btn_group.getElementsByClassName('mdui-btn')[0].classList.add('mdui-btn-active');
     let analyse_box = document.getElementById('analyse-box');
     analyse_box.classList.remove('mdui-hidden');
+    document.getElementById('show-submit-btn').classList.add('mdui-hidden');
     loadAnswer(0);
 }
 
@@ -216,6 +223,8 @@ function loadAnswer(serial) {
     let jump_btn_group = document.getElementById('jump-btn-group');
     jump_btn_group.getElementsByClassName('mdui-btn-active')[0].classList.remove('mdui-btn-active');
     jump_btn_group.getElementsByClassName('mdui-btn')[serial].classList.add('mdui-btn-active');
+    let progress = document.getElementsByClassName('mdui-card')[0].getElementsByClassName('mdui-progress-determinate')[0];
+    progress.setAttribute('style', 'width: ' + serial / answer_object.data.length * 100 + '%;');
 }
 
 function getResourceLocalPath(url) {

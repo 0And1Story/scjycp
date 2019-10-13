@@ -116,6 +116,9 @@ img:first-child {
     top: 0;
     left: 0;
 }
+.mdui-progress .mdui-progress-determinate {
+    transition-timing-function: ease;
+}
 @keyframes fade-in {
     0% {
         opacity: 0;
