@@ -13,7 +13,7 @@ function loadExamPack() {
         '        </div>' +
         '    </div>' +
         '    <div class="mdui-card-actions">' +
-        '        <button class="mdui-btn mdui-color-theme" onclick="loadExamList(' + i + ')">进入题库</button>' +
+        '        <button class="mdui-btn mdui-color-theme-accent" onclick="loadExamList(' + i + ')">进入题库</button>' +
         '    </div>' +
         '</div>';
     }
@@ -38,7 +38,7 @@ function loadExamList(serial) {
         '        </div>' +
         '    </div>' +
         '    <div class="mdui-card-actions">' +
-        '        <button class="mdui-btn mdui-color-theme" onclick="loadExam(' + serial + ', ' + i + ')">进入试题</button>' +
+        '        <button class="mdui-btn mdui-color-theme-accent" onclick="loadExam(' + serial + ', ' + i + ')">进入试题</button>' +
         '    </div>' +
         '</div>';
     }
