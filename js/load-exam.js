@@ -7,7 +7,7 @@ function loadExam(pack, list) {
         '<div class="mdui-progress">' +
         '    <div class="mdui-progress-indeterminate mdui-color-theme-accent"></div>' +
         '</div>';
-        card.getElementsByClassName('mdui-btn')[0].classList.add('mdui-color-theme-300');
+        card.getElementsByClassName('mdui-btn')[0].classList.add('mdui-color-theme-a100');
     }
     let filename = 'exam/' + examlist[pack].type + '/' + examlist[pack].path + '/' + examlist[pack].list[list].file;
     let script = document.createElement('script');

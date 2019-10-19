@@ -5,6 +5,9 @@ main {
 .mdui-theme-primary-blue .mdui-color-theme {
     color: #fff !important;
 }
+.mdui-color-theme-accent.mdui-color-theme-a100 {
+    color: #fff !important;
+}
 .mdui-container-fluid .mdui-card {
     margin-top: 20px;
     padding: 15px;
@@ -120,6 +123,9 @@ img:first-child {
     left: 0;
 }
 .mdui-progress .mdui-progress-determinate {
+    transition-timing-function: ease;
+}
+.mdui-progress .mdui-progress-indeterminate {
     transition-timing-function: ease;
 }
 @keyframes fade-in {
