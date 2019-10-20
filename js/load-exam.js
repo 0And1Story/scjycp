@@ -221,6 +221,7 @@ function loadAnswer(serial) {
             resource_box.innerHTML += '<audio src="' + getResourceLocalPath(answer_object.data[serial].resources[i].url) + '" controls="controls" preload="auto"></audio>';
         }
     }
+    if (answer_object.data[serial].question_audio != '') resource_box.innerHTML += '<audio src="' + getResourceLocalPath(answer_object.data[serial].question_audio) + '" controls="controls" preload="auto"></audio>';
     let jump_btn_group = document.getElementById('jump-btn-group');
     jump_btn_group.getElementsByClassName('mdui-btn-active')[0].classList.remove('mdui-btn-active');
     jump_btn_group.getElementsByClassName('mdui-btn')[serial].classList.add('mdui-btn-active');
