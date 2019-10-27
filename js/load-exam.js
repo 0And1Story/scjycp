@@ -1,4 +1,5 @@
 var checked_answer = [];
+var isUseOrigin = false;
 
 function loadExam(pack, list) {
     if (document.getElementsByClassName('mdui-card').length > 0) {
@@ -230,7 +231,8 @@ function loadAnswer(serial) {
 }
 
 function getResourceLocalPath(url) {
-    return 'resource/' + url.split('/').slice(-2).join('/');
+    if (isUseOrigin) return url;
+    else return 'resource/' + url.split('/').slice(-2).join('/');
 }
 
 function showSubmitButton() {
@@ -242,5 +244,27 @@ function showSubmitButton() {
     } else {
         submit_btn.classList.add('mdui-hidden');
         icon.innerHTML = 'visibility_off';
+    }
+}
+
+function changeResourceOrigin() {
+    let btn = document.getElementById('change-source');
+    let icon = btn.getElementsByClassName('mdui-icon')[0];
+    let tooltips = document.getElementsByClassName('mdui-tooltip');
+    isUseOrigin = !isUseOrigin;
+    if (isUseOrigin) {
+        icon.innerHTML = 'flash_on';
+        btn.setAttribute('mdui-tooltip', '{content: \'使用 官方 源\'}');
+        for (let i = 0; i < tooltips.length; i ++) {
+            if (tooltips[i].innerHTML == '使用 GitHub 源')
+                tooltips[i].innerHTML = '使用 官方 源';
+        }
+    } else {
+        icon.innerHTML = 'flash_off';
+        btn.setAttribute('mdui-tooltip', '{content: \'使用 GitHub 源\'}');
+        for (let i = 0; i < tooltips.length; i ++) {
+            if (tooltips[i].innerHTML == '使用 官方 源')
+                tooltips[i].innerHTML = '使用 GitHub 源';
+        }
     }
 }
