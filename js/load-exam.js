@@ -1,5 +1,6 @@
 var checked_answer = [];
 var isUseOrigin = false;
+var backList = 0;
 
 function loadExam(pack, list) {
     if (document.getElementsByClassName('mdui-card').length > 0) {
@@ -31,7 +32,7 @@ function loadData(pack) {
     }
     let card_container = document.getElementById('card-container');
     card_container.innerHTML = '';
-    card_container.innerHTML += '<button class="mdui-btn" onclick="loadExamList(' + pack + ')"><i class="mdui-icon material-icons">arrow_back</i> 返回</button>'
+    card_container.innerHTML += '<button class="mdui-btn" id="back-btn" onclick="loadExamList(' + pack + ')"><i class="mdui-icon material-icons">arrow_back</i> 返回</button>'
     card_container.innerHTML += 
     '<div class="mdui-card mdui-hoverable">' +
     '    <div class="mdui-container-fluid">' +
@@ -143,6 +144,9 @@ function changeAnswer(problem, number) {
     else submit_btn.classList.add('mdui-hidden');
     let progress = document.getElementsByClassName('mdui-card')[0].getElementsByClassName('mdui-progress-determinate')[0];
     progress.setAttribute('style', 'width: ' + document.getElementById('jump-btn-group').getElementsByClassName('mdui-color-theme-accent').length / answer_object.data.length * 100 + '%;');
+    let back = document.getElementById('back-btn');
+    if (document.getElementById('jump-btn-group').getElementsByClassName('mdui-color-theme-accent').length == 0) back.outerHTML = '<button class="mdui-btn" id="back-btn" onclick="loadExamList(' + backList + ')"><i class="mdui-icon material-icons">arrow_back</i> 返回</button>';
+    else back.outerHTML = '<button class="mdui-btn" id="back-btn" mdui-dialog="{target: \'#back-dialog\'}"><i class="mdui-icon material-icons">arrow_back</i> 返回</button>';
 }
 
 function submitAnswer() {
