@@ -2,15 +2,15 @@ function loadPage() {
     let cmds = getArgs(['list', 'exam']);
     switch(Object.keys(cmds).length) {
         case 0:
-            window.addEventListener('load', loadExamPack, false);
+            loadExamPack();
             break;
 
         case 1:
-            window.addEventListener('load', function() { loadExamList(cmds.list); }, false);
+            loadExamList(cmds.list);;
             break;
 
         case 2:
-            window.addEventListener('load', function() { loadExam(cmds.list, cmds.exam); }, false);
+            loadExam(cmds.list, cmds.exam);
             break;
 
         default:
@@ -31,5 +31,5 @@ function getArgs(keys) {
 }
 
 (function() {
-    loadPage();
+    window.addEventListener('load', loadPage, false);
 })();
