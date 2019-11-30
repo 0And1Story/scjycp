@@ -77,6 +77,13 @@ function loadProblem(serial) {
     title.innerHTML = (serial + 1) + '. ' + answer_object.data[serial].question;
     let form = document.getElementById('answer-form');
     form.innerHTML = '';
+    let option_resource, option_resource_number = 0;
+    for (let i = 0; i < answer_object.data[serial].options.length; i ++) {
+        if (answer_object.data[serial].options[i].url != '') {
+            option_resource_number ++;
+            if (option_resource_number == 1) option_resource = answer_object.data[serial].options[i];
+        }
+    }
     if (answer_object.data[serial].type == 2) {
         for (let i = 0; i < answer_object.data[serial].options.length; i ++) {
             form.innerHTML += 
@@ -86,7 +93,7 @@ function loadProblem(serial) {
             '    <i class="mdui-checkbox-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
             '</label>' +
-            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
+            (answer_object.data[serial].options[i].url == '' || option_resource_number == 1 ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
         }
     } else {
         for (let i = 0; i < answer_object.data[serial].options.length; i ++) {
@@ -97,7 +104,7 @@ function loadProblem(serial) {
             '    <i class="mdui-radio-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
             '</label>' +
-            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
+            (answer_object.data[serial].options[i].url == '' || option_resource_number == 1 ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
         }
     }
     let btns = box.getElementsByClassName('mdui-btn');
@@ -109,6 +116,10 @@ function loadProblem(serial) {
     else btns[1].classList.remove('mdui-hidden');
     let resource_box = document.getElementById('resource-box');
     resource_box.innerHTML = '';
+    if (option_resource_number == 1) {
+        if (option_resource.type == 1) resource_box.innerHTML += '<img src="' + getResourceLocalPath(option_resource.url) + '">';
+        else resource_box.innerHTML += '<audio src="' + getResourceLocalPath(option_resource.url) + '" controls="controls" preload="auto"></audio>';
+    }
     for (let i = 0; i < answer_object.data[serial].resources.length; i ++) {
         if (answer_object.data[serial].resources[i].type == 1) {
             resource_box.innerHTML += '<img src="' + getResourceLocalPath(answer_object.data[serial].resources[i].url) + '">';
@@ -185,6 +196,13 @@ function loadAnswer(serial) {
     title.innerHTML = (serial + 1) + '. ' + answer_object.data[serial].question;
     let form = document.getElementById('answer-form');
     form.innerHTML = '';
+    let option_resource, option_resource_number = 0;
+    for (let i = 0; i < answer_object.data[serial].options.length; i ++) {
+        if (answer_object.data[serial].options[i].url != '') {
+            option_resource_number ++;
+            if (option_resource_number == 1) option_resource = answer_object.data[serial].options[i];
+        }
+    }
     if (answer_object.data[serial].type == 2) {
         for (let i = 0; i < answer_object.data[serial].options.length; i ++) {
             form.innerHTML += 
@@ -194,7 +212,7 @@ function loadAnswer(serial) {
             '    <i class="mdui-checkbox-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
             '</label>' +
-            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
+            (answer_object.data[serial].options[i].url == '' || option_resource_number == 1 ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
         }
     } else {
         for (let i = 0; i < answer_object.data[serial].options.length; i ++) {
@@ -205,7 +223,7 @@ function loadAnswer(serial) {
             '    <i class="mdui-radio-icon"></i>' +
             '    ' + String.fromCharCode('A'.charCodeAt(0) + i) + '. ' + answer_object.data[serial].options[i].txt +
             '</label>' +
-            (answer_object.data[serial].options[i].url == '' ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
+            (answer_object.data[serial].options[i].url == '' || option_resource_number == 1 ? '' : '<br>' + (answer_object.data[serial].options[i].type == 1 ? '<img src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '">' : '<audio src="' + getResourceLocalPath(answer_object.data[serial].options[i].url) + '" controls="controls" preload="auto"></audio>'));
         }
     }
     let analyse_box = document.getElementById('analyse-box');
@@ -219,6 +237,10 @@ function loadAnswer(serial) {
     else btns[1].classList.remove('mdui-hidden');
     let resource_box = document.getElementById('resource-box');
     resource_box.innerHTML = '';
+    if (option_resource_number == 1) {
+        if (option_resource.type == 1) resource_box.innerHTML += '<img src="' + getResourceLocalPath(option_resource.url) + '">';
+        else resource_box.innerHTML += '<audio src="' + getResourceLocalPath(option_resource.url) + '" controls="controls" preload="auto"></audio>';
+    }
     for (let i = 0; i < answer_object.data[serial].resources.length; i ++) {
         if (answer_object.data[serial].resources[i].type == 1) {
             resource_box.innerHTML += '<img src="' + getResourceLocalPath(answer_object.data[serial].resources[i].url) + '">';
