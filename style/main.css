@@ -126,6 +126,9 @@ img:first-child {
 #analyse-box {
     margin-bottom: 30px;
 }
+.tags-group {
+    float: right;
+}
 .mdui-card .mdui-progress {
     position: absolute;
     top: 0;
@@ -158,5 +161,8 @@ img:first-child {
     }
     img:hover {
         transform: scale(2);
+    }
+    .tags-group {
+        float: left;
     }
 }
