@@ -3,8 +3,6 @@ function loadPage() {
     switch(Object.keys(cmds).length) {
         case 0:
             loadExamPack();
-            let wish_dlg = new mdui.Dialog('#wish-dialog');
-            wish_dlg.open();
             break;
 
         case 1:
